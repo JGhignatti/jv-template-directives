@@ -1,0 +1,27 @@
+<div *jvIf="flag">Test</div>
+
+<button (click)="onClick()">Click</button>
+
+<hr>
+
+<jv-child [info]="template"
+          [list]="list"></jv-child>
+
+<ng-template let-item let-function="func" #template>
+  <div (click)="function(item)">{{ item }}</div>
+</ng-template>
+
+<hr>
+
+<div *jvFor="let item from list; let index = index">
+  {{ item }} {{ index }}
+</div>
+
+<hr>
+
+<div [jvSwitch]="value">
+  <div *jvSwitchCase="'A'">AAA</div>
+  <div *jvSwitchCase="'B'">BBB</div>
+</div>
+
+<button (click)="toggle()">Click</button>
